@@ -1,0 +1,33 @@
+{
+"select * from users": [
+	{
+		"id" : 1,
+		"full_name" : "full_name",
+		"email" : "a@mail.ru",
+		"created_at" : "2026-07-06T15:40:39.576Z"
+	},
+	{
+		"id" : 2,
+		"full_name" : "full_name",
+		"email" : "b@mail.ru",
+		"created_at" : "2026-07-06T15:40:39.576Z"
+	},
+	{
+		"id" : 3,
+		"full_name" : "full_name",
+		"email" : "c@mail.ru",
+		"created_at" : "2026-07-06T15:40:39.576Z"
+	},
+	{
+		"id" : 4,
+		"full_name" : "full_name",
+		"email" : "d@mail.ru",
+		"created_at" : "2026-07-06T15:40:39.576Z"
+	},
+	{
+		"id" : 5,
+		"full_name" : "full_name",
+		"email" : "e@mail.ru",
+		"created_at" : "2026-07-06T15:40:39.576Z"
+	}
+]}
