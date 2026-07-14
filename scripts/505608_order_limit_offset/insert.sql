@@ -67,3 +67,17 @@ VALUES
 (19, 'CANCELLED'),
 (20, 'COMPLETED')
 RETURNING *;
+
+INSERT INTO order_items (order_id, product_id, quantity, unit_price)
+VALUES
+    (3, 5, 2, 200.00),
+    (4, 6, 1, 150.00),
+    (5, 11, 1, 17000.00),
+    (6, 12, 1, 7600.00),
+    (7, 9, 3, 500.00),
+    (8, 10, 2, 3000.00),
+    (9, 11, 1, 17000.00),
+    (10, 12, 1, 7600.00),
+    (11, 7, 1, 1490.00),
+    (12, 3, 1, 24990.00)
+RETURNING *;
