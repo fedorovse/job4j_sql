@@ -1,7 +1,7 @@
 # для каждого статуса заказа вывести количество заказов
 SELECT
 	o.status,
-	count(o.id) AS orders_count
+	COUNT(o.id) AS orders_count
 FROM orders o
 GROUP BY o.status ;
 
@@ -9,7 +9,7 @@ GROUP BY o.status ;
 SELECT
 	u.id AS user_id,
 	u.name AS user_name,
-	sum(oi.unit_price * oi.quantity ) AS total_spent
+	SUM(oi.unit_price * oi.quantity ) AS total_spent
 FROM orders o
 JOIN order_items oi ON o.id = oi.order_id
 JOIN users u ON o.user_id = u.id
@@ -21,7 +21,7 @@ GROUP BY u.name, u.id;
 SELECT
 	p.id AS product_id,
 	p.name AS product_name,
-	count(oi.id) AS order_items_count,
+	COUNT(oi.id) AS order_items_count,
 	SUM(oi.unit_price * oi.quantity ) AS total_quantity
 FROM order_items oi
 JOIN products p ON p.id  = oi.product_id
@@ -33,8 +33,8 @@ GROUP BY p.id, p.name ;
 # итоговую сумму заказа
 SELECT
 	o.id AS order_id,
-	count(oi.id) AS items_count,
-	sum(oi.unit_price * oi.quantity) AS order_total
+	COUNT(oi.id) AS items_count,
+	SUM(oi.unit_price * oi.quantity) AS order_total
 FROM orders o
 JOIN order_items oi ON o.id = oi.order_id
 GROUP BY o.id;
@@ -44,7 +44,7 @@ SELECT
 	u.id AS user_id,
 	u.name AS user_name,
 	status,
-	count(o.status) AS orders_count
+	COUNT(o.status) AS orders_count
 FROM users u
 JOIN orders o ON u.id = o.user_id
 GROUP BY u.id, u.name, o.status
@@ -65,7 +65,7 @@ GROUP BY oi.product_id, p.name ;
 SELECT
 	u.id AS user_id,
 	u.name AS user_name,
-	count(o.id) AS orders_count
+	COUNT(o.id) AS orders_count
 FROM users u
 LEFT JOIN orders o ON u.id = o.user_id
 GROUP BY u.id, u.name ;
